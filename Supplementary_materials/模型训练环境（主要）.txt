@@ -1,0 +1,9 @@
+#模型训练环境（主要）
+
+#Basenji
+tensorflow-gpu            1.13.1
+
+
+#DeeperDeepSEA及其各优化、两个新模型
+selene-sdk                0.4.8 
+pytorch                   1.4.0

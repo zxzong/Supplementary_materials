@@ -1,0 +1,9 @@
+1、callpeak
+macs2 callpeak –t <input file> -f BAM –n <output peakfile> -B -g   3.0e8 --nomodel --extsize 38 --shift -15 --keep-dup all -B --SPMR --call-summits
+
+2、merge bam
+samtools merge merge.bam a.bam b.bam 
+
+3、bam2bw
+bamcoverge -b  <input bamfile> -o <output bwfile>
+

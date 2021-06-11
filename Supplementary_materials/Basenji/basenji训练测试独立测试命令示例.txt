@@ -1,0 +1,20 @@
+#train：模型训练
+python basenji_train_h5.py  --augment_rc --ensemble_rc --augment_shifts "1,0,-1" --logdir ./model  --params ./params.txt  --data ./NIP24.h5
+
+
+#test：模型测试
+#Basenji 的plots模块的regplot得到的计算值，即论文中Baenji测试集的log_value_R（和作者绘制散点图的结果保持一致）。
+#basenji_test_h5_tz_2是涂师兄对basenji_test脚本的输出格式等内容进行优化后的版本
+python basenji_test_h5_tz_2.py  ./params.txt  ./model1/model_best.tf   .、NIP.h5 -o ./test1 --save --rc --peaks --ai 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 >./model_test1
+
+
+
+#sad:变异注释
+python  basenji_sad.py  -f  ./NIPP.fasta   -o ./NIP/  --rc -t ./f_m_list  ./params.txt ./model/model_best.tf ./192_nip.vcf
+
+python  basenji_sad.py  -f  ./MH63.fasta   -o ./MH/  --rc -t ./f_m_list  ./params.txt ./model/model_best.tf ./192_mh.vcf
+
+
+
+
+
